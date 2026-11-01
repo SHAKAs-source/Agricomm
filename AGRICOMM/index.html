@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h2>Seller Dashboard</h2>
+        <p>Enter the details of the product you want to sell.</p>
+        <form id="productForm">
+            <label for="productName">Product Name:</label>
+            <input type="text" id="productName" 
+            placeholder="e.g Fresh tomatoes" required><br><br>
+            <label for="category">Product Category</label>
+    <select id="category" required>
+    <option value="">Choose category</option>
+    <option value="Vegetables">Vegetables</option>
+      <option value="Fruits">Fruits</option>
+      <option value="Grains">Grains</option>
+     <option value="Legumes">Legumes</option>
+      <option value="Other">Other</option>
+      </select><br><br>
+
+  <label for="quantity">Quantity Available</label>
+ <input type="number" id="quantity"
+      min="0.01" step="any"
+    placeholder="e.g. 20" required><br><br>
+
+    <label for="unit">Quantity Unit</label>
+    <select id="unit" required>
+       <option value="kg">Kilograms</option>
+      <option value="bags">Bags</option>
+   <option value="crates">Crates</option>
+    <option value="bunches">Bunches</option>
+    <option value="pieces">Pieces</option>
+  </select><br><br>
+
+   <label for="price">Price (UGX)</label><br>
+   <input type="number" id="price"
+    min="1" step="1"
+   placeholder="e.g. 2000" required><br><br>
+
+   <label for="location">Location</label><br>
+   <input type="text" id="location"
+                   placeholder="e.g. Mukono" required><br><br>
+
+<label for="description">Product Description</label><br>
+ <textarea id="description" rows="4"
+                      placeholder="Describe your product"></textarea>
+
+ <button type="submit">Submit Product</button>
+
+  <p id="message"></p>
+
+  </form>
+
+    </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

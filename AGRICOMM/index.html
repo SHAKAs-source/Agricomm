@@ -7,9 +7,13 @@
 </head>
 <body>
     <main>
-        <h2>Seller Dashboard</h2>
-        <p>Enter the details of the product you want to sell.</p>
+      <div class="container my-5">
+        <div class="text-center mb-4">
+        <h2 class="text-success fw-bold">Seller Dashboard</h2>
+        <p class="text-muted">Enter the details of the product you want to sell.</p>
+        </div>
         <form id="productForm">
+          <div class="mb-3">
             <label for="productName">Product Name:</label>
             <input type="text" id="productName" 
             placeholder="e.g Fresh tomatoes" required><br><br>
@@ -22,14 +26,15 @@
      <option value="Legumes">Legumes</option>
       <option value="Other">Other</option>
       </select><br><br>
+          </div>
 <div class="row">
-      <div class="col">
+      <div class="col mb-3">
   <label for="quantity">Quantity Available</label>
  <input type="number" id="quantity"
       min="0.01" step="any"
     placeholder="e.g. 20" required><br><br>
     </div>
-<div class="col">
+<div class="col mb-3">
     <label for="unit">Quantity Unit</label>
     <select id="unit" required>
        <option value="kg">Kilograms</option>
@@ -39,25 +44,29 @@
     <option value="pieces">Pieces</option>
   </select><br><br>
 </div>
-
+<div class="mb-3">
    <label for="price">Price (UGX)</label><br>
    <input type="number" id="price"
     min="1" step="1"
    placeholder="e.g. 2000" required><br><br>
-
+</div>
+<div class="mb-3">
    <label for="location">Location</label><br>
    <input type="text" id="location"
                    placeholder="e.g. Mukono" required><br><br>
-
+</div>
+<div class="mb-3">
 <label for="description">Product Description</label><br>
  <textarea id="description" rows="4"
                       placeholder="Describe your product"></textarea>
-
+</div>
+<div class="mb-3">
  <button type="submit">Submit Product</button>
-
+</div>
   <p id="message"></p>
 
   </form>
+      </div>
 
     </main>
 

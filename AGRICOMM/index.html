@@ -21,10 +21,10 @@
         <form id="productForm">
           <div class="mb-3">
             <label for="productName">Product Name:</label><br>
-            <input type="text" id="productName" 
+            <input type="text" class="form-control mt-3" id="productName" 
             placeholder="e.g Fresh tomatoes" required><br><br>
             <label for="category">Product Category</label><br>
-    <select id="category" required>
+    <select id="category" class="form-control mt-3 form-select" required>
     <option value="">Choose category</option>
     <option value="Vegetables">Vegetables</option>
       <option value="Fruits">Fruits</option>
@@ -36,13 +36,13 @@
 <div class="row">
       <div class="col mb-3">
   <label for="quantity">Quantity</label><br>
- <input type="number" id="quantity"
-      min="0.01" step="any"
+ <input type="number" class="form-control mt-3" id="quantity"
+      min="1" step="any"
     placeholder="e.g. 20" required><br><br>
     </div>
 <div class="col mb-3">
     <label for="unit">Unit</label><br>
-    <select id="unit" required>
+    <select id="unit" class="form-control mt-3" required>
        <option value="kg">Kilograms</option>
       <option value="bags">Bags</option>
    <option value="crates">Crates</option>
@@ -52,22 +52,22 @@
 </div>
 <div class="mb-3">
    <label for="price">Price (UGX)</label><br>
-   <input type="number" id="price"
-    min="1" step="1"
+   <input type="number" class="form-control mt-3" id="price"
+    min="100" step="1"
    placeholder="e.g. 2000" required><br><br>
 </div>
 <div class="mb-3">
    <label for="location">Location</label><br>
-   <input type="text" id="location"
+   <input type="text" class="form-control mt-3" id="location"
                    placeholder="e.g. Mukono" required><br><br>
 </div>
 <div class="mb-3">
 <label for="description">Product Description</label><br>
- <textarea id="description" rows="4"
+ <textarea id="description" rows="4" class="form-control mt-3"
                       placeholder="Describe your product"></textarea>
 </div>
 <div class="mb-3">
- <button type="submit">Submit Product</button>
+ <button type="submit" class="form-control mt-3">Submit Product</button>
 </div>
   <p id="message"></p>
 

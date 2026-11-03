@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AGRICOMM - Buy Crops</title>
+	<style>
+	
+		/*1. RESET & BASIC STYLES*/
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		body {
+			background-color: #f4f6f8;
+			color: #333333;
+			line-height: 1.5;
+			padding: 20px 10px;
+		}
+
+		/*Container wrapper*/
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 15px;
+		}
+
+		/*Utility button style*/
+		.btn {
+			display: inline-block;
+			padding: 10px 16px;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			font-weight: bold;
+			font-size: 14px;
+			text-align: center;
+			transition: background-color 0.2s;
+		}
+
+		.btn-green {
+			background-color: #2E7D32;
+			color: #ffffff;
+		}
+		.btn-green:hover {
+			background-color: #1B5E20;
+		}
+
+		.btn-blue {
+			background-color: #0288D1;
+			color: #ffffff;
+		}
+		.btn-blue:hover {
+			background-color: #1565C0;
+		}
+
+		.btn-outline {
+			background-color: transparent;
+			border: 2px solid #2E7D32;
+			color: #2E7D32;
+		}
+		.btn-outline:hover {
+			background-color: #2E7D32;
+			color: #ffffff;
+		}
+
+		/*2. BANNER & FLOATING CART BUTTON*/
+
+		.page-banner {
+			background-color: #2E7D32;
+			color: #ffffff;
+			padding: 24px 20px;
+			border-radius: 8px;
+			margin-bottom: 25px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 15px;
+		}
+
+		.page-banner h1 {
+			font-size: 26px;
+			margin-bottom: 5px;
+		}
+		
+		.page-banner p {
+			font-size: 14px;
+			color: #E8F5E9;
+		}
+
+		.cart-trigger-btn {
+			background-color: #0288D1;
+			color: #ffffff;
+			border: none;
+			padding: 12px 20px;
+			border-radius: 6px;
+			font-weight: bold;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			font-size: 15px;
+		}
+
+		.cart-count-badge {
+			background-color: #ffffff;
+			color: #0288D1;
+			border-radius: 50%;
+			padding: 2px 8px;
+			font-size: 13px;
+		}
+
+		/*3. MAIN LAYOUT (FILTERS + GRID)*/
+		
+		.marketplace-layout {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+
+		@media (min-width: 768px) {
+			.marketplace-layout {
+				display: grid;
+				grid-template-columns: 260px 1fr;
+				align-items: start;
+			}
+		}
+
+		/*Sidebar Filter Box*/
+		.filter-sidebar {
+			background-color: #ffffff;
+			padding: 20px;
+			border-radius: 8px;
+			border: 1px solid #e0e0e0;
+		}
+
+		.filter-group {
+			margin-bottom: 20px;
+		}
+
+		.filter-group h3 {
+			font-size: 15px;
+			color: #1B5E20;
+			margin-bottom: 10px;
+			border-bottom: 2px solid #E8F5E9;
+			padding-bottom: 5px;
+		}
+
+		.search-input {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			font-size: 14px;
+		}
+
+		.category-list {
+			list-style: none;
+		}
+
+		.category-item {
+			padding: 8px 10px;
+			margin-bottom: 4px;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 14px;
+			display: flex;
+			justify-content: space-between;
+			color: #555555;
+		}
+
+		.category-item:hover, .category-item.active {
+			background-color: #E8F5E9;
+			color: #2E7D32;
+			font-weight: bold;
+		}
+
+		.price-range-container {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+
+		.price-range-slider {
+			width: 100%;
+		}
+		
+		.price-label {
+			font-size: 13px;
+			color: #666666;
+			font-weight: bold;
+		}
+
+		.sort-select {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			font-size: 14px;	
+			background-color: #ffffff;
+		}
+
+		/* 4. CROPS PRODUCT GRID */
+
+		.crops-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+			gap: 20px;
+		}
+
+		.crop-card {
+			background-color: #ffffff;
+			border-radius: 8px;
+			border: 1px solid #e0e0e0;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			transition: transform 0.2s, box-shadow 0.2s;
+		}
+
+		.crop-card:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+		}
+
+		.crop-image-container {
+			height: 160px;
+			width: 100%;
+			background-color: #eeeeee;
+			position: relative;
+		}
+
+		.crop-image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.badge-location {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			background-color: rgba(2, 136, 209, 0.9);
+			color: #ffffff;
+			font-size: 11px;
+			padding: 4px 8px;
+			border-radius: 4px;
+			font-weight: bold;
+		}
+	
+		.crop-details {
+			padding: 15px;
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+		}
+		
+		.crop-name {
+			font-size: 16px;
+			font-weight: bold;
+			color: #2E7D32;
+			margin-bottom: 4px;
+		}
+
+		.farmer-info {
+			font-size: 12px;
+			color: #666666;
+			margin-bottom: 10px;
+		}
+
+		.crop-price {
+			font-size: 18px;
+			font-weight: bold;
+			color: #0288D1;
+			margin-top: auto;
+			margin-bottom: 12px;
+		}
+
+		.unit-text {
+			font-size: 12px;
+			color: #777777;
+			font-weight: normal;
+		}
+
+		.no-results {
+			grid-column: 1 / -1;
+			background-color: #ffffff;
+			padding: 40px;
+			text-align: center;
+			border-radius: 8px;
+			color: #666666;
+		}
+
+		/* 5. CART SIDEBAR DRAWER */
+
+		.cart-overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			display: none;
+			justify-content: flex-end;
+			z-index: 1000;
+		}
+
+		.cart-drawer {
+			width: 100%;
+			max-width: 380px;
+			background-color: #ffffff;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			padding: 20px;
+			box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+		}
+
+		.cart-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-bottom: 2px solid #f4f6f8;
+			padding-bottom: 12px;
+			margin-bottom: 15px;
+		}
+
+		.cart-header h2 {
+			font-size: 18px;
+			color: #2E7D32;
+		}
+
+		.close-cart-btn {
+			background: none;
+			border: none;
+			font-size: 22px;
+			cursor: pointer;
+			color: #666666;
+		}
+
+		.cart-items-container {
+			flex-grow: 1;
+			overflow-y: auto;
+			margin-bottom: 15px;
+		}
+
+		.cart-item {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px 0;
+			border-bottom: 1px solid #eeeeee;
+		}
+
+		.cart-item-title {
+			font-weight: bold;
+			font-size: 14px;
+			color: #333333;
+		}
+
+		.cart-item-price {
+			font-size: 13px;
+			color: #0288D1;
+		}
+
+		.qty-controls {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			margin-top: 5px;
+		}
+
+		.qty-btn {
+			background-color: #eeeeee;
+			border: none;
+			width: 24px;
+			height: 24px;
+			border-radius: 4px;
+			cursor: pointer;
+			font-weight: bold;
+		}
+
+		.qty-btn:hover {
+			background-color: #dddddd;
+		}
+
+		.cart-footer {
+			border-top: 2px solid #f4f6f8;
+			padding-top: 15px;
+		}
+		
+		.total-row {
+			display: flex;
+			justify-content: space-between;
+			font-size: 16px;
+			font-weight: bold;
+			margin-bottom: 15px;
+		}
+
+		/* Toast notification */
+		.toast {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+			background-color: #2E7D32;
+			color: #ffffff;
+			padding: 12px 20px;
+			border-radius: 6px;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+			display: none;
+			z-index: 2000;
+		}	
+	</style>		
+</head>
+<body>
+	
+	<div class="container">
+
+		<!-- Banner & Cart Button Header -->
+		<div class="page-banner">
+			<div>
+				<h1>AGRICOMM Produce Marketplace</h1>
+				<p>Buy fresh crops directly from Ugandan farmers at local prices.</p>
+			</div>
+			<button class="cart-trigger-btn" onclick="toggleCart()">
+				🛒 My Basket <span class="cart-count-badge" id="cartCountBadge">0</span>
+			</button>
+		</div>
+
+		<!-- Main Marketplace Section -->
+		<div class="marketplace-layout">
+
+			<!-- Sidebar Filters -->
+			<aside class="filter-sidebar">
+				<!-- Search -->
+				<div class="filter-group">
+					<h3>Search Crops</h3>
+					<input type="text" id="searchInput" class="search-input" placeholder="e.g. Matooke, Beans..." onkeyup="applyAllFilters()">
+				</div>
+
+				<!-- Category Filter -->
+				<div class="filter-group">
+					<h3>Category</h3>
+					<ul class="category-list">
+						<li class="category-item active" onclick="selectCategory('All', this)">All Produce</li>
+						<li class="category-item" onclick="selectCategory('Bananas', this)">Bananas</li>
+						<li class="category-item" onclick="selectCategory('Grains & Beans', this)">Grains & Beans</li>
+						<li class="category-item" onclick="selectCategory('Vegetables', this)">Vegetables</li>
+						<li class="category-item" onclick="selectCategory('Roots & Tubers', this)">Roots & Tubers</li>
+						<li class="category-item" onclick="selectCategory('Fruits', this)">Fruits</li>
+					</ul>
+				</div>
+
+				<!-- Price Range Filter -->
+				<div class="filter-group">
+					<h3>Max Price (UGX)</h3>
+					<div class="price-range-container">
+						<input type="range" id="priceRange" class="price-range-slider" min="1000" max="50000" step="1000" value="50000" oninput="updatePriceLabel(); applyAllFilters()">
+						<div class="price-label">Up to: <span id="priceValueText">UGX 50,000</span></div>
+					</div>
+				</div>
+
+				<!-- Sorting Filter -->
+				<div class="filter-group">
+					<h3>Sort By</h3>
+					<select id="sortSelect" class="sort-select" onchange="applyAllFilters()">
+						<option value="default">Default</option>
+						<option value="lowToHigh">Price: Low to High</option>
+						<option value="highToLow">Price: High to Low</option>
+					</select>
+				</div>
+			</aside>
+
+			<!-- Product Grid -->
+			<main id="cropsGrid" class="crops-grid">
+			</main>
+
+		</div>
+	</div>
+
+	<!-- Basket / Cart Drawer -->
+	<div id="cartOverlay" class="cart-overlay">
+		<div class="cart-drawer">
+			<div class="cart-header">
+				<h2>Your Produce Basket</h2>
+				<button class="close-cart-btn" onclick="toggleCart()">&times;</button>
+			</div>
+			<div id="cartItemsContainer" class="cart-items-container">
+			</div>
+			<div class="cart-footer">
+				<div class="total-row">
+					<span>Total Amount:</span>
+					<span id="cartTotalText" style="color: #0288D1;">UGX 0</span>
+				</div>
+				<button class="btn btn-green" style="width: 100%;" onclick="checkoutAlert()">Proceed to Buy</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Toast Popup Notification -->
+	<div id="toast" class="toast">Item added to basket!</div>
+
+	<script>
+		//Crop items dataset
+		const cropsData = [
+			{
+				id: 1,
+				name: "Fresh Matooke",
+				category: "Bananas",
+				price: 25000,
+				unit: "Bunch",
+				farmer: "Kato Farmers",
+				location: "Mukono",
+				image: "images/matooke.jpeg"
+			},
+			{
+				id: 2,
+				name: "Yellow Maize",
+				category: "Grains & Beans",
+				price: 1800,
+				unit: "Kg",
+				farmer: "Mityana Grain Co-op",
+				location: "Mityana",
+				image: "images/maize.jpg"
+			},
+			{
+				id: 3,
+				name: "Fresh Tomatoes",
+				category: "Vegetables",
+				price: 4000,
+				unit: "Heap",
+				farmer: "Nalubega Farms",
+				location: "Wakiso",
+				image: "images/tomatoes.jpg"
+			},
+			{
+				id: 4,
+				name: "Red Beans",
+				category: "Grains & Beans",
+				price: 3500,
+				unit: "Kg",
+				farmer: "Ankole Produce Ltd",
+				location: "Mbarara",
+				image: "images/beans.jpg"
+			},
+			{
+				id: 5,
+				name: "Fresh Cassava",
+				category: "Roots & Tubers",
+				price: 1500,
+				unit: "Heap",
+				farmer: "Lira Roots Association",
+				location: "Lira",
+				image: "images/cassava.jpg"
+			},
+			{
+				id: 6,
+				name: "Irish Potatoes",
+				category: "Roots & Tubers",
+				price: 2800,
+				unit: "Kg",
+				farmer: "Kigezi Growers",
+				location: "Kabale",
+				image: "images/irish_potatoes.jpg"
+			},
+			{
+				id: 7,
+				name: "Red Onions",
+				category: "Vegetables",
+				price: 3000,
+				unit: "Kg",
+				farmer: "Busoga Farmers Union",
+				location: "Jinja",
+				image: "images/onions.jpg"
+			},
+			{
+				id: 8,
+				name: "Sweet Mangoes",
+				category: "Fruits",
+				price: 5000,
+				unit: "Basket",
+				farmer: "Luweero Orchards",
+				location: "Luweero",
+				image: "images/mangoes.jpg"
+			}
+		];
+
+		//State variables
+		let selectedCategory = "All";
+		let shoppingCart = [];
+
+		//Initial render on page load
+		window.onload = function() {
+			renderCropGrid(cropsData);
+		};
+
+		//Render Cards to Page
+		function renderCropGrid(dataArray) {
+			const gridContainer = document.getElementById("cropsGrid");
+			gridContainer.innerHTML = "";
+
+			if (dataArray.length === 0) {
+				gridContainer.innerHTML = `<div class="no-results"><h3>No crops found</h3><p>Try adjusting your search filters or price range.</p></div>`;
+				return;
+			}
+
+			dataArray.forEach(crop => {
+				const cardHTML = `
+					<div class="crop-card">
+						<div class="crop-image-container">
+							<img src="${crop.image}" alt="${crop.name}" class="crop-image">
+							<span class="badge-location"> 📍 ${crop.location}</span>
+						</div>
+						<div class="crop-details">
+							<div class="crop-name">${crop.name}</div>
+							<div class="farmer-info">By ${crop.farmer}</div>
+							<div class="crop-price">
+								UGX ${crop.price.toLocaleString()} <span class="unit-text">/ ${crop.unit}</span>
+							</div>
+							<button class="btn btn-green" style="width: 100%; margin-top: 5px;" onclick="addToCart(${crop.id})">Add to Basket</button>
+						</div>
+					</div>
+				`;
+				gridContainer.innerHTML += cardHTML;
+			});
+		}
+
+		//Price label update
+		function updatePriceLabel() {
+			const priceVal = document.getElementById("priceRange").value;
+			document.getElementById("priceValueText").innerText = "UGX " + parseInt(priceVal).toLocaleString();
+		}
+
+		//Category Selection
+		function selectCategory(categoryName, element) {
+			selectedCategory = categoryName;
+			
+			//Toggle UI active class
+			const items = document.querySelectorAll(".category-item");
+			items.forEach(item => item.classList.remove("active"));
+			element.classList.add("active");
+
+			applyAllFilters();
+		}
+
+		//Filter and Sort Logic
+		function applyAllFilters() {
+			const searchKeyword = document.getElementById("searchInput").value.toLowerCase();
+			const maxPrice = parseInt(document.getElementById("priceRange").value);
+			const sortOption = document.getElementById("sortSelect").value;
+
+			let filtered = cropsData.filter(crop => {
+				const matchesSearch = crop.name.toLowerCase().includes(searchKeyword) || crop.location.toLowerCase().includes(searchKeyword);
+				const matchesCategory = (selectedCategory === "All") || (crop.category === selectedCategory);
+				const matchesPrice = crop.price <= maxPrice;
+
+				return matchesSearch && matchesCategory && matchesPrice;
+			});
+
+			//Sorting
+			if (sortOption === "lowToHigh") {
+				filtered.sort((a, b) => a.price - b.price);
+			} else if (sortOption === "highToLow") {
+				filtered.sort((a, b) => b.price - a.price);
+			}
+
+			renderCropGrid(filtered);
+		}
+
+		//Cart Drawer Handlers
+		function toggleCart() {
+			const overlay = document.getElementById("cartOverlay");
+			if (overlay.style.display === "flex") {
+				overlay.style.display = "none";
+			} else {
+				overlay.style.display = "flex";
+			}
+		}
+
+		function addToCart(cropId) {
+			const selectedCrop = cropsData.find(c => c.id === cropId);
+			const existingItem = shoppingCart.find(item => item.id === cropId);
+
+			if (existingItem) {
+				existingItem.quantity += 1;
+			} else {
+				shoppingCart.push({ ...selectedCrop, quantity: 1 });
+			}
+
+			updateCartUI();
+			showToast(selectedCrop.name + " added to basket!");
+		}
+
+		function changeQuantity(cropId, delta) {
+			const existingItem = shoppingCart.find(item => item.id === cropId);
+			if (existingItem) {
+				existingItem.quantity += delta;
+				if (existingItem.quantity <= 0) {
+					shoppingCart = shoppingCart.filter(item => item.id !== cropId);
+				}
+			}
+			updateCartUI();
+		}
+
+		function updateCartUI() {
+			const container = document.getElementById("cartItemsContainer");
+			const badge = document.getElementById("cartCountBadge");
+			const totalText = document.getElementById("cartTotalText");
+
+			container.innerHTML = "";
+
+			let totalItems = 0;
+			let totalPrice = 0;
+			
+			if (shoppingCart.length === 0) {
+				container.innerHTML = `<p style="text-align: center; color: #888; margin-top: 30px;">Your basket is currently empty.</p>`;
+			} else {
+				shoppingCart.forEach(item => {
+					totalItems += item.quantity;
+					totalPrice += item.price * item.quantity;
+
+					const itemHtml = `
+						<div class="cart-item">
+							<div>
+								<div class="cart-item-title">${item.name}</div>
+								<div class="cart-item-price">UGX ${(item.price * item.quantity).toLocaleString()}</div>
+								<div class="qty-controls">
+									<button class="qty-btn" onclick="changeQuantity(${item.id}, -1)">-</button>
+									<span style="font-size: 13px;">${item.quantity} ${item.unit}</span>
+									<button class="qty-btn" onclick="changeQuantity(${item.id}, 1)">+</button>
+								</div>
+							</div>
+						</div>
+					`;
+					container.innerHTML += itemHtml;
+				});
+			}
+
+			badge.innerText = totalItems;
+			totalText.innerText = "UGX " + totalPrice.toLocaleString();
+		}
+
+		function showToast(message) {
+			const toast = document.getElementById("toast");
+			toast.innerText = message;
+			toast.style.display = "block";
+			setTimeout(() => {
+				toast.style.display = "none";
+			}, 2500);
+		}
+		
+		function checkoutAlert() {
+			if (shoppingCart.length === 0) {
+				alert("Your basket is empty!");
+			} else {
+				alert("Thank you for your order! AgriComm will process your produce purchase.");
+				shoppingCart = [];
+				updateCartUI();
+				toggleCart();
+			}
+		}
+	</script>
+</body>
+</html>

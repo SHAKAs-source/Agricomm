@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Agricomm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --field: #2d6a3e;
+      --field-dark: #1d4a2a;
+      --maize: #e8b931;
+      --soil: #35291f;
+      --mist: #f2f6ef;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      color: var(--soil);
+      background: var(--white);
+      line-height: 1.65;
+      font-size: 1.05rem;
+    }
+    h1, h2, h3 {
+      font-family: "Bricolage Grotesque", system-ui, sans-serif;
+      line-height: 1.1;
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--maize);
+      outline-offset: 3px;
+    }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* Navigation */
+    header { background: var(--white); border-bottom: 1px solid #dfe7da; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 0; gap: 1rem; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 1.35rem; color: var(--field-dark); }
+    .brand img { height: 40px; width: auto; }
+    nav ul { list-style: none; display: flex; gap: 1.4rem; flex-wrap: wrap; }
+    nav ul a { text-decoration: none; font-weight: 600; padding-bottom: 2px; }
+    nav ul a:hover { border-bottom: 2px solid var(--maize); }
+    nav ul a[aria-current="page"] { border-bottom: 2px solid var(--field); }
+
+    /* Hero */
+    .hero { background: var(--field-dark); color: var(--white); padding: 5rem 0 4.5rem; }
+    .hero h1 { font-size: clamp(2.4rem, 6.5vw, 4.6rem); font-weight: 800; max-width: 14ch; }
+    .hero p { margin-top: 1.5rem; max-width: 52ch; font-size: 1.2rem; color: #dcebd9; }
+    .hero .tagline { display: inline-block; margin-top: 2rem; padding: 0.35rem 0.9rem; background: var(--maize); color: var(--soil); font-weight: 600; border-radius: 999px; }
+
+    section { padding: 4rem 0; }
+    section h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); margin-bottom: 1rem; }
+    .lead { max-width: 62ch; }
+
+    /* Who we serve */
+    .serve { background: var(--mist); }
+    .serve-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2.5rem; margin-top: 2rem; }
+    .serve-grid h3 { font-size: 1.4rem; margin-bottom: 0.5rem; padding-left: 0.8rem; border-left: 5px solid var(--maize); }
+    .serve-grid .buy h3 { border-left-color: var(--field); }
+
+    /* How it works */
+    .steps { list-style: none; counter-reset: step; margin-top: 2rem; display: grid; gap: 1.5rem; }
+    .steps li { counter-increment: step; display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; align-items: start; }
+    .steps li::before {
+      content: counter(step);
+      display: grid; place-items: center;
+      width: 3rem; height: 3rem; border-radius: 50%;
+      background: var(--field); color: var(--white);
+      font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 1.3rem;
+    }
+    .steps strong { display: block; font-size: 1.15rem; }
+
+    /* Team */
+    .team { background: var(--mist); }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .member { background: var(--white); padding: 1.25rem; border-radius: 10px; border: 1px solid #dfe7da; }
+    .member img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; background: #cfdccb; margin-bottom: 0.8rem; }
+    .member h3 { font-size: 1.15rem; }
+    .member p { font-size: 0.95rem; }
+
+    /* Call to action */
+    .cta { text-align: center; }
+    .cta .actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+    .btn { display: inline-block; padding: 0.85rem 1.8rem; border-radius: 8px; font-weight: 600; text-decoration: none; }
+    .btn-buy { background: var(--field); color: var(--white); }
+    .btn-sell { background: var(--maize); color: var(--soil); }
+    .btn:hover { filter: brightness(0.92); }
+
+    footer { background: var(--soil); color: #e9e2d9; padding: 2rem 0; font-size: 0.95rem; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <nav aria-label="Main">
+        <a class="brand" href="Agricomm.html">
+          <!-- Replace logo.png with your logo file -->
+          <img src="logo.png" alt="">
+          Agricomm
+        </a>
+        <ul>
+          <li><a href="Agricomm.html">Home</a></li>
+          <li><a href="buy.html">Buy</a></li>
+          <li><a href="sell.html">Sell</a></li>
+          <li><a href="about.html" aria-current="page">About us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1>From the farm straight to the buyer.</h1>
+        <p>Agricomm is an online marketplace where farmers list what they grow and buyers find it, without long chains of middlemen in between.</p>
+        <span class="tagline">Agriculture + Commerce Connected</span>
+      </div>
+    </section>
+
+    <section id="story">
+      <div class="wrap">
+        <h2>Why we built Agricomm</h2>
+        <p class="lead">Farmers work hard to grow good produce, but finding reliable buyers at a fair price is often the hardest part. Buyers face the opposite problem: they want fresh, trustworthy products and don't always know where to look.</p>
+        <p class="lead" style="margin-top:1rem;">Agricomm puts both sides in one place. Our mission is to make agriculture easier to trade in, so farmers earn more from their work and buyers get quality produce.</p>
+        <!-- Edit this section to tell your own story: who started Agricomm, where, and when. -->
+      </div>
+    </section>
+
+    <section class="serve">
+      <div class="wrap">
+        <h2>Who Agricomm is for</h2>
+        <div class="serve-grid">
+          <div class="sell">
+            <h3>Farmers</h3>
+            <p>Create a listing with a description and photos of your products. Show buyers exactly what you have and set your own price.</p>
+          </div>
+          <div class="buy">
+            <h3>Buyers</h3>
+            <p>Browse products from farmers, search for what you need, and compare prices in one easy-to-scan marketplace.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="wrap">
+        <h2>How it works</h2>
+        <ol class="steps">
+          <li><div><strong>Farmers list their products</strong>Fill in the sell form with a description, price and pictures.</div></li>
+          <li><div><strong>Buyers browse and search</strong>Products appear as cards with the price and any discounts, so you can compare quickly.</div></li>
+          <li><div><strong>Buyer and farmer connect</strong>Agree on the order directly and get the produce moving.</div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="team" id="team">
+      <div class="wrap">
+        <h2>The team</h2>
+        <p class="lead">The people building Agricomm.</p>
+        <div class="team-grid">
+          <!-- Copy one .member block per person. Replace the photo, name and role. -->
+          <div class="member">
+            <img src="team1.jpg" alt="Photo of Kasasa Albert">
+            <h3>Kasasa Albert</h3>
+            <p>Founder and developer</p>
+          </div>
+          <div class="member">
+            <img src="team2.jpg" alt="Photo of team member">
+            <h3>Team member name</h3>
+            <p>Role</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <h2>Ready to get started?</h2>
+        <p>Find fresh produce or put your harvest in front of buyers.</p>
+        <div class="actions">
+          <a class="btn btn-buy" href="buy.html">Start buying</a>
+          <a class="btn btn-sell" href="sell.html">Start selling</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; 2026 Agricomm</span>
+      <!-- Replace with your real contact details -->
+      <span>Contact: your-email@example.com</span>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,90 +1,107 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <title>AGRICOMM</title>
 </head>
-    <header>
-<h1>AGRI<span>COMM</span></h1>
-<p>Your Trusted Online Marketplace</p>
-</header>
-<nav>
-<a href="index.html">Home</a>
-<a href="products.html">Products</a>
-<a href="sell.html">Sell a product</a>
-</header>
+
 <body>
+
+    <header class="text-center p-4">
+        <h1 class="text-primary">AGRI<span class="text-success">COMM</span></h1>
+        <p>Your Trusted Online Marketplace</p>
+    </header>
+
+    <nav class="bg-success text-center p-3">
+        <a href="index.html" class="text-white mx-3">Home</a>
+        <a href="buy.html" class="text-white mx-3">Buy</a>
+        <a href="sell.html" class="text-white mx-3">Sell a product</a>
+    </nav>
+
     <main>
-      <div class="container my-5">
-        <div class="text-center mb-4">
-        <h2 class="text-success fw-bold">Seller Dashboard</h2>
-        <p class="text-muted">Enter the details of the product you want to sell.</p>
-        </div>
-        <div class="card shadow-sm mx-auto" style="max-width: 700px;">
+        <div class="container my-5">
 
-            <div class="card-header bg-success text-white">
-                <h4 class="mb-0">Add your product</h4>
+            <div class="text-center mb-4">
+                <h2 class="text-success fw-bold">Welcome to AGRICOMM</h2>
+                <p>What would you like to do today?</p>
             </div>
-        <div class="card-body p-4">
-        <form id="productForm">
-          <div class="mb-3">
-            <label for="productName">Product Name:</label><br>
-            <input type="text" class="form-control mt-3" id="productName" 
-            placeholder="e.g Fresh tomatoes" required><br><br>
-            <label for="category">Product Category</label><br>
-    <select id="category" class="form-control mt-3 form-select" required>
-    <option value="">Choose category</option>
-    <option value="Vegetables">Vegetables</option>
-      <option value="Fruits">Fruits</option>
-      <option value="Grains">Grains</option>
-     <option value="Legumes">Legumes</option>
-      <option value="Other">Other</option>
-      </select><br><br>
-          </div>
-<div class="row">
-      <div class="col mb-3">
-  <label for="quantity">Quantity</label><br>
- <input type="number" class="form-control mt-3" id="quantity"
-      min="1" step="any"
-    placeholder="e.g. 20" required><br><br>
-    </div>
-<div class="col mb-3">
-    <label for="unit">Unit</label><br>
-    <select id="unit" class="form-control mt-3" required>
-       <option value="kg">Kilograms</option>
-      <option value="bags">Bags</option>
-   <option value="crates">Crates</option>
-    <option value="bunches">Bunches</option>
-    <option value="pieces">Pieces</option>
-  </select><br><br>
-</div>
-<div class="mb-3">
-   <label for="price">Price (UGX)</label><br>
-   <input type="number" class="form-control mt-3" id="price"
-    min="100" step="1"
-   placeholder="e.g. 2000" required><br><br>
-</div>
-<div class="mb-3">
-   <label for="location">Location</label><br>
-   <input type="text" class="form-control mt-3" id="location"
-                   placeholder="e.g. Mukono" required><br><br>
-</div>
-<div class="mb-3">
-<label for="description">Product Description</label><br>
- <textarea id="description" rows="4" class="form-control mt-3"
-                      placeholder="Describe your product"></textarea>
-</div>
-<div class="mb-3">
- <button type="submit" class="form-control mt-3">Submit Product</button>
-</div>
-  <p id="message"></p>
 
-  </form>
-      </div>
-      </div>
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <div class="card bg-success text-white h-100">
+                        <div class="card-body p-4">
+                            <h3>Buy</h3>
+                            <p>Find fresh produce and farm products from farmers.</p>
+                            <a href="buy.html" class="btn btn-light">
+                                Buy Products
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="card bg-primary text-white h-100">
+                        <div class="card-body p-4">
+                            <h3>Sell</h3>
+                            <p>List your crops and livestock and reach buyers.</p>
+                            <a href="sell.html" class="btn btn-light">
+                                Sell a Product
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <footer class="bg-primary text-white p-4">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+                    <h4>About Us</h4>
+                    <p>
+                        We provide a convenient platform where buyers
+                        and sellers can trade and connect.
+                    </p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h4>Resources</h4>
+                    <p>
+                        <a href="products.html" class="text-white">
+                            Browse Products
+                        </a>
+                    </p>
+                    <p>
+                        <a href="sell.html" class="text-white">
+                            Selling Guide
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h4>Contact Us</h4>
+                    <p>Phone: +256 788000909</p>
+                    <p>Location: Uganda</p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <p class="text-center mb-0">
+                &copy; 2026 AGRICOMM. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>

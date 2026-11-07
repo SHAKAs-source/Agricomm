@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AGRICOMM</title>
     <h1>AGRICULTURAL TRADING AT ITS FINEST</h1>
+
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
@@ -12,24 +13,39 @@
             margin: 0;
             padding: 20px;
         }
+
         h1{
             text-align: center;
             color: aliceblue;
             font-size: 40px;
 
         }
+
         h2{
             color: aquamarine;
             text-align: center;
 
         }
+
         h3{
             color: azure;
 
         }
+
         p{
             font-size: 18px;
+	         text-align: center;
         }
+
+	    .product-container {
+	    display: flex;
+	    flex-wrap: wrap;
+	    justify-content: center;
+	    gap: 20px;
+	    max-width: 800px;
+	    margin: 0 auto;
+	    }
+
         .product{
             background-color: aliceblue;
             width: 300px;
@@ -38,65 +54,71 @@
             text-align: center;
             border: 2px salmon;
             border-radius: 10px;
+	    justify-content: center;
         }
+
         .product img{
             width:250px;
             height: 200px;
             object-fit: cover;
 
         }
+
         .price{
             color: chocolate;
             font-weight: bold;
             font-size: 20px;
         }
-        </style>
-        </head>
+    </style>
+    </head>
         <body>
             <h1>AGRICOMM</h1>
             <h2>FRESH AGRICULTURAL PRODUCTS</h2>
-            <P>Welcome to AgriComm where we connect farmers to customers providing quality products at affordable prices.</P>
+            <p>Welcome to AgriComm where we connect farmers to customers providing quality products at affordable prices.</p>
             <h2>OUR PRODUCTS</h2>
-            <div class="product">
-                <h3>Fresh Tomatoes</h3>
-                <img src="tomatoes.jpg" alt="fresh tomatoes">
-                <p class="price"> UGX. 5000 per kilogram</p>
-                <button onclick="addToCart('Tomatoes')">Add to cart</button>
-                <label>Quantity: </label>
-                <input type="number" id="tomatoesQuantity" min="1" value="1">
-                <p>Freshly grown local tomatoes.</p>
-            </div>
-          
-            <div class="product">
-                <h3>Matooke</h3>
-                <img src="matooke.jpg" alt="matooke">
-                <p class="price"> UGX. 5000 per bunch</p>
-                <button onclick="addToCart('Matooke')">Add to cart</button>
-                <label>Quantity: </label>
-                <input type="number" id="matookeQuantity" min="1" value="1">
-                <p>Freshly grown from the garden to you. </p>
+            
+            <div class="product-container">
+                <div class="product">
+                    <h3>Fresh Tomatoes</h3>
+                    <img src="tomatoes.jpg" alt="Fresh Tomatoes">
+                    <p class="price"> UGX. 5000 per kilogram</p>
+                    <button onclick="addToCart('Tomatoes')">Add to cart</button>
+                    <label>Quantity: </label>
+                    <input type="number" id="tomatoesQuantity" min="1" value="1">
+                    <p>Freshly grown local tomatoes.</p>
+                </div>
+            
+                <div class="product">
+                    <h3>Matooke</h3>
+                    <img src="matooke.jpg" alt="Matooke">
+                    <p class="price"> UGX. 5000 per bunch</p>
+                    <button onclick="addToCart('Matooke')">Add to cart</button>
+                    <label>Quantity: </label>
+                    <input type="number" id="matookeQuantity" min="1" value="1">
+                    <p>Freshly grown from the garden to you. </p>
+                </div>
+
+                <div class="product">
+                    <h3>Beans</h3>
+                    <img src="cool beans.jpg" alt="Cool Beans">
+                    <p class="price"> UGX. 10000 per kilogram</p>
+                    <button onclick="addToCart('Beans')">Add to cart</button>
+                    <label>Quantity: </label>
+                    <input type="number" id="beansQuantity" min="1" value="1">
+                    <p>Freshly grown from the garden to you. </p>
+                </div>
+
+                <div class="product">
+                    <h3>Irish potatoes</h3>
+                    <img src="irish potatoes.jpg" alt="Irish Potatoes">
+                    <p class="price"> UGX. 50000 per bunch</p>
+                    <button onclick="addToCart('irishPotatoes')">Add to cart</button>
+                    <label>Quantity:</label>
+                    <input type="number" id="irishpotatoesQuantity" min="1" value="1">
+                    <p>The right size for fries.</p>
+                </div>
             </div>
 
-            <div class="product">
-                <h3>Beans</h3>
-                <img src="cool beans.jpg" alt="cool beans">
-                <p class="price"> UGX. 10000 per kilogram</p>
-                <button onclick="addToCart('Beans')">Add to cart</button>
-                <label>Quantity: </label>
-                <input type="number" id="beansQuantity" min="1" value="1">
-                <p>Freshly grown from the garden to you. </p>
-             </div>
-
-            <div class="product">
-                <h3>Irish potatoes</h3>
-                <img src="irish potatoes.jpg" alt="irish potatoes">
-                <p class="price"> UGX. 50000 per bunch</p>
-                <button onclick="addToCart('irishPotatoes')">Add to cart</button>
-                <label>Quantity:</label>
-                <input type="number" id="irishpotatoesQuantity" min="1" value="1">
-                <p>The right size for fries.</p>
-
-            </div>
             <script>function calculateTotal(){
                 let tomatoes = Number( document.getElementById("tomatoesQuantity").value;)
                 let matooke = Number(document.getElementById("matookeQuantity").value;)
@@ -115,5 +137,5 @@
                 
                 
             <script>function addToCart(product){alert(product + " added to cart");}</script>           
-  </body>
+        </body>
 </html>

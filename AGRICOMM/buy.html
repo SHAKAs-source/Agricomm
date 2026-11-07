@@ -1,15 +1,14 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AGRICOMM</title>
     <h1>AGRICULTURAL TRADING AT ITS FINEST</h1>
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background-color: black;
+            background-color: white;
             margin: 0;
             padding: 20px;
         }
@@ -56,51 +55,51 @@
         <body>
             <h1>AGRICOMM</h1>
             <h2>FRESH AGRICULTURAL PRODUCTS</h2>
-            <P>Welcome to agricomm where we connect farmers to customers providing quality products at affordable prices</P>
+            <P>Welcome to AgriComm where we connect farmers to customers providing quality products at affordable prices.</P>
             <h2>OUR PRODUCTS</h2>
             <div class="product">
-                <h3>fresh tomatoes</h3>
+                <h3>Fresh Tomatoes</h3>
                 <img src="tomatoes.jpg" alt="fresh tomatoes">
                 <p class="price"> UGX. 5000 per kilogram</p>
-                <button onclick="addToCart('tomatoes')">Add to cart</button>
-                <label>Quantity:</label>
+                <button onclick="addToCart('Tomatoes')">Add to cart</button>
+                <label>Quantity: </label>
                 <input type="number" id="tomatoesQuantity" min="1" value="1">
-                <p>freshly grown local tomatoes</p>
-
+                <p>Freshly grown local tomatoes.</p>
             </div>
+          
             <div class="product">
-                <h3>matooke</h3>
+                <h3>Matooke</h3>
                 <img src="matooke.jpg" alt="matooke">
                 <p class="price"> UGX. 5000 per bunch</p>
-                <button onclick="addToCart('matooke')">Add to cart</button>
-                <label>Quantity:</label>
+                <button onclick="addToCart('Matooke')">Add to cart</button>
+                <label>Quantity: </label>
                 <input type="number" id="matookeQuantity" min="1" value="1">
-                <p>freshly grown from the garden to you </p>
+                <p>Freshly grown from the garden to you. </p>
             </div>
 
             <div class="product">
-                <h3>beans</h3>
-                <img src="beans.jpg" alt="cool beans">
+                <h3>Beans</h3>
+                <img src="cool beans.jpg" alt="cool beans">
                 <p class="price"> UGX. 10000 per kilogram</p>
-                <p>freshly grown from the garden to you </p>
-                <button onclick="addToCart(' beans')">Add to cart</button>
-                <label>Quantity:</label>
+                <button onclick="addToCart('Beans')">Add to cart</button>
+                <label>Quantity: </label>
                 <input type="number" id="beansQuantity" min="1" value="1">
+                <p>Freshly grown from the garden to you. </p>
              </div>
 
             <div class="product">
-                <h3>irish potatoes</h3>
+                <h3>Irish potatoes</h3>
                 <img src="irish potatoes.jpg" alt="irish potatoes">
                 <p class="price"> UGX. 50000 per bunch</p>
                 <button onclick="addToCart('irishPotatoes')">Add to cart</button>
                 <label>Quantity:</label>
                 <input type="number" id="irishpotatoesQuantity" min="1" value="1">
-                <p>the right size for fries</p>
+                <p>The right size for fries.</p>
 
             </div>
             <script>function calculateTotal(){
-                let tomatoes =Number( document.getElementById("tomatoesQuantity").value;)
-                let matooke =   Number(document.getElementById("matookeQuantity").value;)
+                let tomatoes = Number( document.getElementById("tomatoesQuantity").value;)
+                let matooke = Number(document.getElementById("matookeQuantity").value;)
                 let irishpotatoes = Number(document.getElementById("irishPotatoesQuantity").value;)
                 let beans = Number(document.getElementById("beansQuantity").value;)
 
@@ -115,6 +114,6 @@
                 </script>
                 
                 
-            <script>function addToCart(product){alert(product + "added to cart");}</script>           
+            <script>function addToCart(product){alert(product + " added to cart");}</script>           
   </body>
 </html>

@@ -1,4 +1,8 @@
-oioi<!DOCTYPE html>
+
+about.html
+
+100%
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,10 +13,10 @@ oioi<!DOCTYPE html>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --field: #387d21;
+      --field: #387d21;       /* green from the home page nav bar */
       --field-dark: #387d21;
-      --maize: #2b4e8c;
-      --soil: #2b4e8c;
+      --maize: #2b4e8c;       /* blue from the home page About Us box (was yellow) */
+      --soil: #2b4e8c;        /* same blue (was brown) */
       --mist: #f2f6ef;
       --white: #ffffff;
     }
@@ -49,7 +53,7 @@ oioi<!DOCTYPE html>
     /* Hero */
     .hero { background: var(--field-dark); color: var(--white); padding: 5rem 0 4.5rem; }
     .hero h1 { font-size: clamp(2.4rem, 6.5vw, 4.6rem); font-weight: 800; max-width: 14ch; }
-    .hero p { margin-top: 1.5rem; max-width: 52ch; font-size: 1.2rem; color: #dcebd9; }
+    .hero p { margin-top: 1.5rem; max-width: 52ch; font-size: 1.2rem; color: #e6f2e1; }
     .hero .tagline { display: inline-block; margin-top: 2rem; padding: 0.35rem 0.9rem; background: var(--maize); color: var(--white); font-weight: 600; border-radius: 999px; }
 
     section { padding: 4rem 0; }
@@ -74,13 +78,8 @@ oioi<!DOCTYPE html>
     }
     .steps strong { display: block; font-size: 1.15rem; }
 
-    /* Team */
+    /* Mission (light green background) */
     .team { background: var(--mist); }
-    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-    .member { background: var(--white); padding: 1.25rem; border-radius: 10px; border: 1px solid #dfe7da; }
-    .member img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; background: #cfdccb; margin-bottom: 0.8rem; }
-    .member h3 { font-size: 1.15rem; }
-    .member p { font-size: 0.95rem; }
 
     /* Call to action */
     .cta { text-align: center; }
@@ -90,7 +89,7 @@ oioi<!DOCTYPE html>
     .btn-sell { background: var(--maize); color: var(--white); }
     .btn:hover { filter: brightness(0.92); }
 
-    footer { background: var(--soil); color: #e9e2d9; padding: 2rem 0; font-size: 0.95rem; }
+    footer { background: var(--soil); color: #e9eef7; padding: 2rem 0; font-size: 0.95rem; }
     footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
 
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -161,23 +160,32 @@ oioi<!DOCTYPE html>
       </div>
     </section>
 
-    <section class="team" id="team">
+    <section class="team" id="mission">
       <div class="wrap">
-        <h2>The team</h2>
-        <p class="lead">The people building Agricomm.</p>
-        <div class="team-grid">
-          <!-- Copy one .member block per person. Replace the photo, name and role. -->
-          <div class="member">
-            <img src="team1.jpg" alt="Photo of Kasasa Albert">
-            <h3>Kasasa Albert</h3>
-            <p>Founder and developer</p>
+        <h2>Our mission and values</h2>
+        <p class="lead">Agricomm exists to make farming more rewarding and food easier to find. We believe a farmer's hard work should be seen by the people who need it, and that buyers deserve to know exactly where their food comes from.</p>
+        <div class="serve-grid">
+          <div class="sell">
+            <h3>Fair prices</h3>
+            <p>Farmers set their own prices and deal directly with buyers, so more of the money from every sale stays with the people who grew the produce.</p>
           </div>
-          <div class="member">
-            <img src="group.jpeg" alt="The Agricomm team ">
-            <h3>Team member name</h3>
-            <p>Role</p>
+          <div class="buy">
+            <h3>Trust and quality</h3>
+            <p>Clear descriptions and photos of every product help buyers know what they are getting before they order, and help good farmers build a reputation.</p>
+          </div>
+          <div class="sell">
+            <h3>Easy access</h3>
+            <p>Agricomm is designed to work well on a phone, so a farmer in the village and a buyer in town can trade with the same simple tools.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="vision">
+      <div class="wrap">
+        <h2>Where we are going</h2>
+        <p class="lead">We started with a simple marketplace for buying and selling. Our vision is to grow Agricomm into a platform that connects farmers, buyers and agricultural services across Uganda, from fresh crops and livestock to market prices and farming advice.</p>
+        <p class="lead" style="margin-top:1rem;">Agricomm is built by Kasasa Albert, a student developer who believes technology can make agriculture easier to trade in. It is still growing, and every farmer and buyer who joins helps shape what it becomes.</p>
       </div>
     </section>
 
@@ -203,3 +211,4 @@ oioi<!DOCTYPE html>
 
 </body>
 </html>
+Displaying about.html.

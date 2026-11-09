@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AGRICOMM</title>
-    
+
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
@@ -17,7 +17,8 @@
             text-align: center;
             color: green;
             font-size: 40px;
-		}
+
+        }
 
         h2{
             color: skyblue;
@@ -85,7 +86,6 @@
 </head>
         <body>
             <h1>ONLINE AGRICULTURAL TRADING AT ITS FINEST</h1>
-			
             <h2>FRESH AGRICULTURAL PRODUCTS</h2>
             <p>Welcome to AgriComm where we connect farmers to customers providing quality products at affordable prices.</p>
             <h2>OUR PRODUCTS</h2>
@@ -95,9 +95,9 @@
                     <h3>Fresh Tomatoes</h3>
                     <img src="tomatoes.jpg" alt="Fresh Tomatoes">
                     <p class="price"> UGX 5000 per kilogram</p>
-                    <button onclick="addToCart('Tomatoes')">Add to Cart</button><br><br>
+                    <button onclick="addToCart('Tomatoes', 'tomatoesQuantity')">Add to Cart</button><br><br>
                     <label>Quantity: </label>
-                    <input type="number" id="tomatoesQuantity" min="1" value="1">
+                    <input type="number" id="tomatoesQuantity" min="0" value="0">
                     <p>Freshly grown local tomatoes.</p>
                 </div>
             
@@ -105,9 +105,9 @@
                     <h3>Matooke</h3>
                     <img src="matooke.jpg" alt="Matooke">
                     <p class="price"> UGX 5000 per bunch</p>
-                    <button onclick="addToCart('Matooke')">Add to Cart</button><br><br>
+                    <button onclick="addToCart('Matooke', 'matookeQuantity')">Add to Cart</button><br><br>
                     <label>Quantity: </label>
-                    <input type="number" id="matookeQuantity" min="1" value="1">
+                    <input type="number" id="matookeQuantity" min="0" value="0">
                     <p>Freshly grown from the garden to you. </p>
                 </div>
 
@@ -115,19 +115,19 @@
                     <h3>Beans</h3>
                     <img src="cool beans.jpg" alt="Cool Beans">
                     <p class="price"> UGX 10000 per kilogram</p>
-                    <button onclick="addToCart('Beans')">Add to Cart</button><br><br>
+                    <button onclick="addToCart('Beans', 'beansQuantity')">Add to Cart</button><br><br>
                     <label>Quantity: </label>
-                    <input type="number" id="beansQuantity" min="1" value="1">
-                    <p>The right protein for a healthy body. </p>
+                    <input type="number" id="beansQuantity" min="0" value="0">
+                    <p>Freshly grown from the garden to you. </p>
                 </div>
 
                 <div class="product">
                     <h3>Irish potatoes</h3>
                     <img src="irish potatoes.jpg" alt="Irish Potatoes">
                     <p class="price"> UGX 50000 per bunch</p>
-                    <button onclick="addToCart('Irish Potatoes')">Add to Cart</button><br><br>
+                    <button onclick="addToCart('Irish Potatoes', 'irishPotatoesQuantity')">Add to Cart</button><br><br>
                     <label>Quantity:</label>
-                    <input type="number" id="irishPotatoesQuantity" min="1" value="1">
+                    <input type="number" id="irishPotatoesQuantity" min="0" value="0">
                     <p>The right size for fries.</p>
                 </div>
             </div>
@@ -148,13 +148,20 @@
                 let matookePrice = 5000;
                 let irishPotatoesPrice = 50000;
 
-                let finalTotal = (tomatoes * tomatoesPrice) + (beans * beansPrice) + (matooke * matookePrice) + (irishPotatoesPrice * irishPotatoes);
+                let finalTotal = (tomatoes * tomatoesPrice) + (beans * beansPrice) + (matooke * matookePrice) + (irishPotatoesPrice * irishpotatoes);
 
                 document.getElementById("resultDisplay").innerHTML = "Total = UGX " + finalTotal;
             }
                 
-            function addToCart(product){
-                alert(product + " added to cart");
+            function addToCart(product, quantityId){
+                let qty = Number(document.getElementById(quantityId).value) || 0;
+
+                if (qty <= 0) {
+                    alert("No quantity for " + product + " entered");
+                } else {
+                    calculateTotal();
+                    alert(product + " added to cart");
+                }
             }
             </script>           
         </body>

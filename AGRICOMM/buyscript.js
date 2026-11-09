@@ -5,9 +5,9 @@ function calculateTotal(){
     let irishpotatoes = Number(document.getElementById("irishPotatoesQuantity").value) || 0;
 
     let tomatoesPrice = 5000;
-    let beansPrice = 10000;
-    let matookePrice = 5000;
-    let irishPotatoesPrice = 50000;
+    let beansPrice = 3500;
+    let matookePrice = 50000;
+    let irishPotatoesPrice = 10000;
 
     let finalTotal = (tomatoes * tomatoesPrice) + (beans * beansPrice) + (matooke * matookePrice) + (irishPotatoesPrice * irishpotatoes);
 

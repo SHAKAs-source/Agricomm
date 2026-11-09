@@ -1,0 +1,8 @@
+.bg-green { background-color: #387d21; }
+.bg-blue { background-color; #2b4e8c; }
+.text-green { color: #387d21; }
+.text-blue {color: #2b4e8c; ]
+.btn-green {background-color: #387d21; border-color: #387d21; color: #fff; }
+.btn-blue { background-color: #2b44e8c; border-color: #2b4e8c; color: #fff; }
+.btn-green:hover, .btn-blue:hover{color: #fff; filter: brightness(0.9); }
+           

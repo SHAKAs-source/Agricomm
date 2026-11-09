@@ -1,67 +1,80 @@
+
+about.html
+
+100%
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Agricomm</title>
+
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Your own CSS (defines text-green, bg-green, bg-blue, btn-green, btn-blue, etc.) -->
   <link href="style_about.css" rel="stylesheet">
 </head>
-<body class="text-blue">
-  
+
+<body>
+
+  <!-- Navigation bar -->
   <nav class="navbar navbar-expand-sm bg-white border-bottom">
     <div class="container">
-      <a class="navbar-brand fw-bold text-green d-flex align-items-center" href="Agricomm.html">
-        <img src="logo.png" alt="" height="40" class="me-2">
-        Agricomm
+      <a class="navbar-brand text-green fw-bold" href="Agricomm.html">
+        <img src="logo.png" alt="Agricomm logo" height="40"> Agricomm
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+
+      <!-- Menu button on small screens -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="buy.html">Buy</a></li>
           <li class="nav-item"><a class="nav-link" href="sell.html">Sell</a></li>
-          <li class="nav-item"><a class="nav-link active fw-semibold" href="about.html" aria-current="page">About us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About us</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
+  <!-- Banner -->
   <header class="bg-green text-white py-5">
-    <div class="container py-4">
+    <div class="container">
       <h1 class="display-4 fw-bold">From the farm straight to the buyer.</h1>
-      <p class="lead mt-3 col-lg-8">Agricomm is an online marketplace where farmers list what they grow and buyers find it, without long chains of middlemen in between.</p>
-      <span class="badge bg-blue fs-6 mt-2">Agriculture + Commerce Connected</span>
+      <p class="lead">Agricomm is an online marketplace where farmers list what they grow and buyers find it, without long chains of middlemen in between.</p>
     </div>
   </header>
 
   <main>
 
+    <!-- Why we built it -->
     <section class="container py-5">
-      <h2 class="fw-bold">Why we built Agricomm</h2>
-      <p class="col-lg-8">Farmers work hard to grow good produce, but finding reliable buyers at a fair price is often the hardest part. Buyers face the opposite problem: they want fresh, trustworthy products and don't always know where to look.</p>
-      <p class="col-lg-8">Agricomm puts both sides in one place so farmers earn more from their work and buyers get quality produce.</p>
+      <h2>Why we built Agricomm</h2>
+      <p>Farmers work hard to grow good produce, but finding reliable buyers at a fair price is often the hardest part. Buyers face the opposite problem: they struggle to find fresh produce they can trust.</p>
+      <p>Agricomm puts both sides in one place so farmers earn more from their work and buyers get quality produce.</p>
     </section>
 
+    <!-- Who it is for -->
     <section class="bg-light py-5">
       <div class="container">
-        <h2 class="fw-bold mb-4">Who Agricomm is for</h2>
+        <h2 class="mb-4">Who Agricomm is for</h2>
         <div class="row g-4">
           <div class="col-md-6">
-            <div class="card h-100 border-0 shadow-sm">
+            <div class="card">
               <div class="card-body">
                 <h3 class="h4 text-blue">Farmers</h3>
-                <p class="mb-0">Create a listing with a description and photos of your products. Show buyers exactly what you have and set your own price.</p>
+                <p>Create a listing with a description and photos of your products. Show buyers exactly what you have and set your own price.</p>
               </div>
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card h-100 border-0 shadow-sm">
+            <div class="card">
               <div class="card-body">
                 <h3 class="h4 text-green">Buyers</h3>
-                <p class="mb-0">Browse products from farmers, search for what you need, and compare prices in one easy-to-scan marketplace.</p>
+                <p>Browse products from farmers, search for what you need, and compare prices in one easy-to-scan marketplace.</p>
               </div>
             </div>
           </div>
@@ -69,32 +82,34 @@
       </div>
     </section>
 
+    <!-- How it works -->
     <section class="container py-5">
-      <h2 class="fw-bold mb-4">How it works</h2>
+      <h2 class="mb-4">How it works</h2>
       <div class="row g-4">
         <div class="col-md-4">
-          <span class="badge rounded-pill bg-green fs-5 mb-2">1</span>
+          <span class="badge rounded-pill bg-green mb-2">1</span>
           <h3 class="h5">Farmers list their products</h3>
           <p>Fill in the sell form with a description, price and pictures.</p>
         </div>
         <div class="col-md-4">
-          <span class="badge rounded-pill bg-green fs-5 mb-2">2</span>
+          <span class="badge rounded-pill bg-green mb-2">2</span>
           <h3 class="h5">Buyers browse and search</h3>
           <p>Products appear as cards with the price, so you can compare quickly.</p>
         </div>
         <div class="col-md-4">
-          <span class="badge rounded-pill bg-green fs-5 mb-2">3</span>
+          <span class="badge rounded-pill bg-green mb-2">3</span>
           <h3 class="h5">Buyer and farmer connect</h3>
           <p>Agree on the order directly and get the produce moving.</p>
         </div>
       </div>
     </section>
 
+    <!-- Mission and values -->
     <section class="bg-light py-5">
       <div class="container">
-        <h2 class="fw-bold">Our mission and values</h2>
-        <p class="col-lg-8">Agricomm exists to make farming more rewarding and food easier to find. A farmer's hard work should be seen by the people who need it, and buyers deserve to know where their food comes from.</p>
-        <div class="row g-4 mt-1">
+        <h2>Our mission and values</h2>
+        <p>Agricomm exists to make farming more rewarding and food easier to find. A farmer's hard work should be seen by the people who need it, and buyers should be able to find good food easily.</p>
+        <div class="row g-4">
           <div class="col-md-4">
             <h3 class="h5 text-green">Fair prices</h3>
             <p>Farmers set their own prices and deal directly with buyers, so more of each sale stays with the people who grew the produce.</p>
@@ -111,29 +126,34 @@
       </div>
     </section>
 
+    <!-- Future -->
     <section class="container py-5">
-      <h2 class="fw-bold">Where we are going</h2>
-      <p class="col-lg-8">We started with a simple marketplace for buying and selling. Our vision is to grow Agricomm into a platform that connects farmers, buyers and agricultural services across Uganda.</p>
+      <h2>Where we are going</h2>
+      <p>We started with a simple marketplace for buying and selling. Our vision is to grow Agricomm into a platform that connects farmers, buyers and agricultural services.</p>
     </section>
 
+    <!-- Call to action -->
     <section class="bg-light py-5 text-center">
       <div class="container">
-        <h2 class="fw-bold">Ready to get started?</h2>
+        <h2>Ready to get started?</h2>
         <p>Find fresh produce or put your harvest in front of buyers.</p>
-        <a class="btn btn-green btn-lg me-2" href="buy.html">Start buying</a>
+        <a class="btn btn-green btn-lg" href="buy.html">Start buying</a>
         <a class="btn btn-blue btn-lg" href="sell.html">Start selling</a>
       </div>
     </section>
 
   </main>
 
+  <!-- Footer -->
   <footer class="bg-blue text-white py-4">
-    <div class="container d-flex flex-wrap justify-content-between gap-2">
+    <div class="container d-flex justify-content-between">
       <span>&copy; 2026 Agricomm</span>
       <span>email: agricomm@gmail.com</span>
     </div>
   </footer>
 
+  <!-- Bootstrap JavaScript (needed for the menu button) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+Displaying about.html.

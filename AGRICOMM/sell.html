@@ -62,16 +62,24 @@
   </select><br>
 </div>
 <div class="mb-3">
-   <label for="price">Price (UGX)</label><br>
+   <label for="price">Price (UGX) {for each unit}</for></label><br>
    <input type="number" class="form-control mt-3" id="price"
     min="100" step="1"
    placeholder="e.g. 2000" required><br>
+</div>
+<div class="mb-3">
+            <label for="farmerName">Farmer's Name / Company Name:</label><br>
+            <input type="text" class="form-control mt-3" id="farmerName" required><br>
 </div>
 <div class="mb-3">
    <label for="location">Location</label><br>
    <input type="text" class="form-control mt-3" id="location"
                    placeholder="e.g. Mukono" required><br>
 </div>
+<div class="mb-3">
+            <label for="contact">Phone Contact:</label><br>
+            <input type="tel" class="form-control mt-3" id="contact" 
+            placeholder="e.g 0771234567" pattern="0[0-9]{9}" required><br>
 <div class="mb-3">
 <label for="description">Product Description</label><br>
  <textarea id="description" rows="4" class="form-control mt-3"

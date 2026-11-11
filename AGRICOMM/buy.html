@@ -58,23 +58,16 @@
 
 			<!-- Sidebar Filters -->
 			<aside class="filter-sidebar">
-				<!-- Search -->
 				<div class="filter-group">
 					<h3>Search Crops</h3>
-					<input type="text" id="searchInput" class="search-input" placeholder="e.g. Matooke, Beans..." onkeyup="applyAllFilters()">
+					<input type="text" id="searchInput" class="search-input" placeholder="Search name, seller or place..." oninput="applyAllFilters()">
 				</div>
 
 				<!-- Category Filter -->
 				<div class="filter-group">
 					<h3>Category</h3>
-					<ul class="category-list">
-						<li class="category-item active" onclick="selectCategory('All', this)">All Produce</li>
-						<li class="category-item" onclick="selectCategory('Bananas', this)">Bananas</li>
-						<li class="category-item" onclick="selectCategory('Grains & Beans', this)">Grains & Beans</li>
-						<li class="category-item" onclick="selectCategory('Vegetables', this)">Vegetables</li>
-						<li class="category-item" onclick="selectCategory('Roots & Tubers', this)">Roots & Tubers</li>
-						<li class="category-item" onclick="selectCategory('Fruits', this)">Fruits</li>
-					</ul>
+					<!-- filled by buyscript.js from CATEGORIES in store.js -->
+					<ul class="category-list" id="categoryList"></ul>
 				</div>
 
 				<!-- Price Range Filter -->
@@ -90,16 +83,15 @@
 				<div class="filter-group">
 					<h3>Sort By</h3>
 					<select id="sortSelect" class="sort-select" onchange="applyAllFilters()">
-						<option value="default">Default</option>
+						<option value="default">Newest First</option>
 						<option value="lowToHigh">Price: Low to High</option>
 						<option value="highToLow">Price: High to Low</option>
 					</select>
 				</div>
 			</aside>
 
-			<!-- Product Grid -->
-			<main id="cropsGrid" class="crops-grid">
-			</main>
+			<!-- Product Grid(flilled from products saved by the sell page) -->
+			<main id="cropsGrid" class="crops-grid"></main>
 
 		</div>
 	</div>
@@ -111,14 +103,14 @@
 				<h2>Your Produce Basket</h2>
 				<button class="close-cart-btn" onclick="toggleCart()">&times;</button>
 			</div>
-			<div id="cartItemsContainer" class="cart-items-container">
-			</div>
+			<div id="cartItemsContainer" class="cart-items-container"></div>
 			<div class="cart-footer">
 				<div class="total-row">
 					<span>Total Amount:</span>
 					<span id="cartTotalText" style="color: #0288D1;">UGX 0</span>
 				</div>
-				<button class="btn btn-green" style="width: 100%;" onclick="checkoutAlert()">Proceed to Buy</button>
+				<p style="font-size: 12px; color: #666; margin-bottom: 10px;">Use "Order on WhatsApp" under each item to confirm with that seller.</p>
+				<button class="btn btn-green" style="width: 100%;" onclick="clearCart()">Clear Basket</button>
 			</div>
 		</div>
 	</div>
@@ -126,6 +118,7 @@
 	<!-- Toast Popup Notification -->
 	<div id="toast" class="toast">Item added to basket!</div>
 
+	<script src="store.js"></script>
 	<script src="buyscript.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     

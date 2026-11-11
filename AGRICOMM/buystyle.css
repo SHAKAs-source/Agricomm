@@ -1,5 +1,4 @@
-/*1. RESET & BASIC STYLES*/
-
+/*Reset and Basic styles*/
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -42,8 +41,7 @@ body {
 	background-color: #1B5E20;
 }
 
-/*2. BANNER & FLOATING CART BUTTON*/
-
+/*Banner and floating cart button*/
 .page-banner {
 	background-color: #2E7D32;
 	color: #ffffff;
@@ -89,8 +87,7 @@ body {
 	font-size: 13px;
 }
 
-/*3. MAIN LAYOUT (FILTERS + GRID)*/
-
+/*Main layout*/
 .marketplace-layout {
 	display: flex;
 	flex-direction: column;
@@ -179,8 +176,7 @@ body {
 	background-color: #ffffff;
 }
 
-/* 4. CROPS PRODUCT GRID */
-
+/*Crops product grid*/
 .crops-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -270,7 +266,7 @@ body {
 	color: #666666;
 }
 
-/* 5. CART SIDEBAR DRAWER */
+/*Cart sidebar drawer*/
 
 .cart-overlay {
 	position: fixed;

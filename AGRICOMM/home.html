@@ -1,88 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGRICOMM</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AGRICOMM is a Ugandan agricultural marketplace helping buyers discover farm produce and sellers showcase their products.">
+  <title>AGRICOMM | Your Trusted Agricultural Marketplace</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
 </head>
+<body>
 
-<body class="d-flex flex-column min-vh-100">
+  <div class="mini-bar"><div class="container d-flex justify-content-between gap-3"><span>Welcome to AGRICOMM  Your Trusted Online Marketplace</span><span class="d-none d-md-inline">Grow together. Trade better.</span></div></div>
+  <header class="site-nav">
+    <nav class="navbar navbar-expand-lg" aria-label="Main navigation"><div class="container">
+      <a class="brand" href="index.html" aria-label="AGRICOMM Home"><span class="brand-icon" aria-hidden="true"><img class="brand-logo" src="AGRICOMM.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><svg class="fallback-logo" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9M12 12C12 7 9 5 5 5c0 5 3 7 7 7ZM12 14c0-4 3-6 7-6 0 4-3 6-7 6Z"/></svg></span><span class="brand-text">AGRI<span>COMM</span></span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainMenu"><ul class="navbar-nav mx-auto align-items-lg-center"><li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="buy.html">Buy</a></li><li class="nav-item"><a class="nav-link" href="sell.html">Sell</a></li><li class="nav-item"><a class="nav-link" href="about.html">About</a></li></ul><a class="btn btn-agri nav-cta" href="sell.html"> <span aria-hidden="true"></span></a></div>
+    </div></nav>
+  </header>
+  <main>
+   
+    <section class="hero" aria-labelledby="hero-title"><div class="container"><div class="hero-content"><div class="kicker">Connecting farmers and buyers in Uganda</div><h1 id="hero-title">Fresh from the farm.<br><em>Closer to you.</em></h1><p>Welcome to AGRICOMM, an agricultural marketplace where buyers can explore farm products and sellers can showcase their harvest. Discover produce, connect with opportunities, and trade with greater ease.</p><div class="hero-actions"><a class="btn btn-gold" href="buy.html">Explore Products <span aria-hidden="true">↗</span></a><a class="btn btn-outline-light" href="sell.html">Sell Your Products <span aria-hidden="true">→</span></a></div><div class="hero-note"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg> One marketplace for agricultural buyers and sellers</div></div></div></section>
+    
+    <section class="benefits" aria-label="AGRICOMM advantages"><div class="container"><div class="row g-0"><div class="col-md-4"><div class="benefit"><span class="icon-box" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 9 9-6 9 6v11H3Z"/><path d="M9 20v-7h6v7"/></svg></span><div><strong>Discover farm products</strong><small>Explore produce and agricultural listings</small></div></div></div><div class="col-md-4"><div class="benefit"><span class="icon-box" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2"/><path d="M2 20v-2a6 6 0 0 1 12 0v2m0-5a5 5 0 0 1 8 4v1"/></svg></span><div><strong>Connect with people</strong><small>Bringing buyers and sellers closer</small></div></div></div><div class="col-md-4"><div class="benefit"><span class="icon-box" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h10m2 0 2 2 4-4"/></svg></span><div><strong>Easy to get started</strong><small>Choose to buy or sell in a few clicks</small></div></div></div></div></div></section>
+    
+    
+    <section class="section section-soft" aria-label="Get started with AGRICOMM"><div class="container"><div class="cta"><p class="kicker justify-content-center mb-3" style="color:#f2cb7b">Your next opportunity starts here</p><h2>Ready to grow with AGRICOMM?</h2><p>Explore the marketplace as a buyer or take the first step toward showcasing your agricultural products as a seller.</p><div class="d-flex justify-content-center flex-wrap gap-3"><a class="btn btn-gold" href="buy.html">Start Buying</a><a class="btn btn-outline-light" href="sell.html">Start Selling</a></div></div></div></section>
+  </main>
 
-    <header class="bg-white text-center p-4">
-        <h1 class="text-primary">AGRI<span class="text-success">COMM</span></h1>
-        <p>Your Trusted Online Marketplace</p>
-    </header>
-
-    <nav class="text-center p-3">
-        <a href="index.html" class="text-white mx-3">Home</a>
-        <a href="buy.html" class="text-white mx-3">BUY</a>
-        <a href="sell.html" class="text-white mx-3">SELL</a>
-        <a href="about.html" class="text-white mx-3">ABOUT</a>
-    </nav>
-
-    <main class="container text-center my-5 flex-grow-1">
-    <img <img class="logo img-fluid"src="AGRICOMM.jpg" alt="AGRICOMM Logo">
-        <p class="fs-5 mt-3 mb-4">What would you like to do today?</p>
-
-        <div class="row justify-content-center g-4">
-            <div class="col-md-4">
-                <a href="buy.html" class="buy text-white text-decoration-none d-block p-4 h-100">
-                    <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
-                        <path d="M3 9h18l-2 11H5L3 9z"/>
-                        <path d="M8 9l4-6 4 6"/>
-                    </svg>
-                    <h2 class="mt-2">Buy</h2>
-                    <p>Find fresh produce and farm products from farmers.</p>
-                </a>
-            </div>
-
-            <div class="col-md-4">
-                <a href="sell.html" class="sell text-white text-decoration-none d-block p-4 h-100">
-                    <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
-                        <path d="M12 21v-9"/>
-                        <path d="M12 12C12 8 9 6 5 6c0 4 3 6 7 6z"/>
-                        <path d="M12 14c0-3 2-5 6-5 0 3-2 5-6 5z"/>
-                    </svg>
-                    <h2 class="mt-2">Sell</h2>
-                    <p>List your crops and livestock and reach buyers.</p>
-                </a>
-            </div>
-        </div>
-    </main>
-
-    <footer class="text-white p-4 mt-auto">
-        <div class="container">
-            <div class="row">
-                <section class="col-md-4 mb-3">
-                    <h4>About Us</h4>
-                    <p>We provide a convenient platform where buyers and sellers can trade and connect properly.</p>
-                    <p><a href="about.html">Our Company</a></p>
-                    <p><a href="about.html#mission">Our Mission</a></p>
-                    <p><a href="about.html#vision">Where We Are Going</a></p>
-                </section>
-
-                <section class="col-md-4 mb-3">
-                    <h4>Resources</h4>
-                    <p>Browse Products</a></p>
-                    <p>Selling Guide</a></p>
-                    <p>Help and Support</a></p>
-                </section>
-
-                <section class="col-md-4 mb-3">
-                    <h4>Contact Us</h4>
-                    <p>Phone: +256 788000909</p>
-                    <p>Location: Uganda</p>
-                    <p>email: agricomm@gmail.com</p>
-                </section>
-            </div>
-
-            <p class="text-center mb-0">&copy; 2026 AGRICOMM. All rights reserved.</p>
-        </div>
-    </footer>
-
+  <footer><div class="container"><div class="row g-4"><div class="col-lg-4 col-md-6"><a class="brand" href="index.html"><span class="brand-text">AGRI<span>COMM</span></span></a><p class="pe-lg-4">Your Trusted Online Marketplace. AGRICOMM brings people together through agriculture by helping buyers and sellers explore opportunities.</p></div><div class="col-lg-2 col-md-6 col-6"><h4>Quick Links</h4><a href="index.html">Home</a><br><a href="buy.html">Buy Products</a><br><a href="sell.html">Sell Products</a><br><a href="about.html">About Us</a></div><div class="col-lg-3 col-md-6 col-6"><h4>About &amp; Resources</h4><a href="about.html">Our Company</a><br><a href="about.html#mission">Our Mission</a><br><a href="about.html#vision">Our Vision</a><br><a href="buy.html">Browse Products</a></div><div class="col-lg-3 col-md-6"><h4>Contact Us</h4><p class="mb-1">Uganda</p><a href="tel:+256788000909">+256 788 000 909</a><br><a href="mailto:agricomm@gmail.com">agricomm@gmail.com</a></div></div><div class="footer-bottom d-flex justify-content-between flex-wrap gap-2"><span>© 2026 AGRICOMM. All rights reserved.</span><span>Grow together. Trade better.</span></div></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
